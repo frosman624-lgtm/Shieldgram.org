@@ -9,9 +9,9 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background: radial-gradient(circle at 20% 20%, #111019 0%, #06060a 45%, #030304 100%);
+            background: radial-gradient(circle at 20% 20%, #2d0b3a 0%, #1a0524 45%, #0d0212 100%);
             font-family: 'VT323', monospace;
-            color: #cfd3dc;
+            color: #e0b0ff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -24,29 +24,28 @@
         #matrix-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: 0;
-            opacity: 0.35;
+            opacity: 0.45;
             pointer-events: none;
         }
 
         /* ✅ LOGOS QUITADOS: se elimina toda su lógica */
-        /* (si en algún momento vuelves a añadirlos por error, esto los oculta) */
         .logo-float, .logo-top-left, .logo-bottom-left, .logo-bottom-right { display: none !important; }
 
         .page-container {
             position: relative; z-index: 10; width: 100%; max-width: 1000px;
             display: flex; flex-direction: column; gap: 20px;
-            background: rgba(12, 12, 18, 0.85);
+            background: rgba(48, 10, 64, 0.85);
             padding: 25px; border-radius: 20px;
-            border: 1px solid rgba(123, 117, 214, 0.3);
-            box-shadow: 0 0 30px rgba(0,0,0,0.8);
+            border: 1px solid #b77aff;
+            box-shadow: 0 0 40px #a55aff;
             backdrop-filter: blur(5px);
             margin-bottom: 50px;
         }
 
         .top-bar {
-            text-align: center; border-bottom: 1.5px solid #7b75d6;
+            text-align: center; border-bottom: 1.5px solid #b77aff;
             padding-bottom: 15px; margin-bottom: 10px;
-            font-size: 22px; color: #cfd3dc; text-shadow: 0 0 4px rgba(123, 117, 214, 0.4);
+            font-size: 22px; color: #e0b0ff; text-shadow: 0 0 10px #b77aff;
         }
         .blink { animation: blink 1.4s step-start infinite; }
         @keyframes blink { 50% { opacity: 0; } }
@@ -62,9 +61,9 @@
             aspect-ratio: 1.58/1; width: 100%;
             border-radius: 18px; padding: 25px; position: relative;
             display: flex; flex-direction: column; justify-content: space-between;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border: 1.5px solid rgba(123, 117, 214, 0.5);
-            box-shadow: 0 0 20px rgba(123, 117, 214, 0.2);
+            background: linear-gradient(135deg, #3f1a5a 0%, #2a0f3a 100%);
+            border: 1.5px solid #c48aff;
+            box-shadow: 0 0 30px #b266ff;
             overflow: hidden; transition: transform 0.3s;
         }
 
@@ -91,25 +90,26 @@
 
         .card-logo-type {
             font-size: 24px; font-weight: bold; font-style: italic;
-            text-transform: uppercase; text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            text-transform: uppercase; text-shadow: 0 0 15px #d9a5ff;
             color: #fff;
         }
 
         .card-number-display {
             font-size: 28px; letter-spacing: 3px; color: #fff;
-            text-shadow: 0 0 8px rgba(123,117,214,0.8);
+            text-shadow: 0 0 12px #c084fc;
             margin-top: 10px; white-space: nowrap;
         }
 
         .card-bottom { display: flex; justify-content: space-between; align-items: flex-end; }
-        .card-label { font-size: 14px; color: #aaa; text-transform: uppercase; }
+        .card-label { font-size: 14px; color: #c9a9ff; text-transform: uppercase; }
         .card-value { font-size: 20px; color: #fff; }
 
         .form-area { flex: 1; display: flex; flex-direction: column; gap: 20px; min-width: 300px; }
         .input-group { position: relative; }
 
         .label {
-            font-size: 20px; color: #cfd3dc; margin-bottom: 5px; display: flex; align-items: center; gap: 8px;
+            font-size: 20px; color: #e0b0ff; margin-bottom: 5px; display: flex; align-items: center; gap: 8px;
+            text-shadow: 0 0 8px #b77aff;
         }
 
         .emoji-jump {
@@ -123,30 +123,30 @@
 
         input {
             width: 100%; background: rgba(0, 0, 0, 0.4);
-            border: 2px solid #555; color: #fff;
+            border: 2px solid #9f5bff; color: #fff;
             font-family: 'VT323', monospace; font-size: 24px; padding: 12px;
             border-radius: 8px; outline: none; transition: all 0.3s;
         }
-        input:focus { border-color: #7b75d6; box-shadow: 0 0 15px rgba(123, 117, 214, 0.3); }
+        input:focus { border-color: #d08aff; box-shadow: 0 0 20px #b266ff; }
 
         .msg-feedback { font-size: 16px; margin-top: 5px; min-height: 20px; transition: all 0.3s; }
-        .msg-error { color: #ff4444; text-shadow: 0 0 5px rgba(255, 0, 0, 0.4); display: none;}
+        .msg-error { color: #ff6b9d; text-shadow: 0 0 5px #ff4d8c; display: none;}
 
         .msg-info {
-            color: #d042ff;
-            text-shadow: 0 0 8px rgba(208, 66, 255, 0.6);
+            color: #cf8eff;
+            text-shadow: 0 0 10px #b266ff;
             display: none; font-weight: bold; letter-spacing: 1px;
         }
 
-        .input-error { border-color: #ff4444 !important; box-shadow: 0 0 10px rgba(255,68,68,0.3) !important; }
+        .input-error { border-color: #ff6b9d !important; box-shadow: 0 0 15px #ff4d8c !important; }
 
         .btn-wrapper {
             perspective: 1000px;
             margin-top: 10px;
         }
         .btn-action {
-            width: 100%; background: #2a2a40;
-            border: 2px solid #7b75d6; color: #fff;
+            width: 100%; background: #3f1a63;
+            border: 2px solid #c48aff; color: #fff;
             font-family: 'VT323', monospace; font-size: 24px;
             padding: 15px; cursor: pointer; border-radius: 10px;
             text-transform: uppercase;
@@ -161,7 +161,7 @@
             100% { transform: rotateX(0deg); }
         }
 
-        .btn-action:hover { background: #7b75d6; color: #000; box-shadow: 0 0 20px #7b75d6; }
+        .btn-action:hover { background: #a55aff; color: #000; box-shadow: 0 0 30px #b77aff; }
 
         .emoji-spin {
             display: inline-block;
@@ -169,15 +169,15 @@
         }
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
-        .footer { text-align: center; font-size: 14px; opacity: 0.6; margin-top: 10px;}
+        .footer { text-align: center; font-size: 14px; opacity: 0.6; margin-top: 10px; color: #b77aff;}
 
         #loading-screen {
             display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(5, 5, 8, 0.95); z-index: 100;
+            background: rgba(30, 5, 40, 0.95); z-index: 100;
             flex-direction: column; justify-content: center; align-items: center; text-align: center;
         }
-        .counter { font-size: 120px; color: #7b75d6; text-shadow: 0 0 20px #7b75d6; }
-        .success-text { font-size: 30px; color: #fff; margin-top: 20px; }
+        .counter { font-size: 120px; color: #c48aff; text-shadow: 0 0 30px #b266ff; }
+        .success-text { font-size: 30px; color: #fff; margin-top: 20px; text-shadow: 0 0 15px #b77aff; }
 
         @media (max-width: 768px) {
             body { align-items: flex-start; padding: 10px; padding-top: 80px; }
@@ -195,7 +195,7 @@
 
     <div class="page-container">
         <div class="top-bar">
-            <span class="blink">SYSTEM_ROOT: ASOCIAR_TARJETA </span>
+            <span class="blink">SHIELDGRAM_ORG: ASOCIAR_TARJETA </span>
         </div>
 
         <div class="content-area">
@@ -209,7 +209,7 @@
                         <div class="card-top">
                             <div class="chip"></div>
 
-                            <div class="card-logo-type" id="cardBrandLabel" style="color: #4af;">VISA</div>
+                            <div class="card-logo-type" id="cardBrandLabel" style="color: #d08aff;">VISA</div>
                         </div>
 
                         <div class="card-number-display" id="displayNumber">XXXX XXXX XXXX XXX</div>
@@ -285,7 +285,7 @@
         function drawMatrix() {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
             ctx.fillRect(0, 0, width, height);
-            ctx.fillStyle = '#8a7dff';
+            ctx.fillStyle = '#b77aff';
             ctx.font = '15pt monospace';
 
             ypos.forEach((y, ind) => {
@@ -343,7 +343,7 @@
                     let d = Math.sqrt((p1.x-p2.x)**2 + (p1.y-p2.y)**2);
                     if(d < 70) {
                         netCtx.beginPath();
-                        netCtx.strokeStyle = `rgba(0, 242, 255, ${1 - d/70})`;
+                        netCtx.strokeStyle = `rgba(183, 122, 255, ${1 - d/70})`;
                         netCtx.lineWidth = 0.8;
                         netCtx.moveTo(p1.x, p1.y);
                         netCtx.lineTo(p2.x, p2.y);
@@ -352,7 +352,7 @@
                 }
 
                 netCtx.beginPath();
-                netCtx.fillStyle = '#00f2ff';
+                netCtx.fillStyle = '#b77aff';
                 netCtx.arc(p1.x, p1.y, 1.5, 0, Math.PI*2);
                 netCtx.fill();
             }
@@ -445,13 +445,13 @@
             let formatted = '';
 
             let type = "VISA";
-            let color = "#4af";
+            let color = "#d08aff";
 
-            if (cardPatterns.mastercard.test(raw)) { type = "MASTERCARD"; color = "#f55"; }
-            else if (cardPatterns.amex.test(raw)) { type = "AMEX"; color = "#0cf"; }
-            else if (cardPatterns.discover.test(raw)) { type = "DISCOVER"; color = "#fa0"; }
-            else if (cardPatterns.diners.test(raw)) { type = "DINERS"; color = "#aaa"; }
-            else if (cardPatterns.visa.test(raw)) { type = "VISA"; color = "#4af"; }
+            if (cardPatterns.mastercard.test(raw)) { type = "MASTERCARD"; color = "#f5a5ff"; }
+            else if (cardPatterns.amex.test(raw)) { type = "AMEX"; color = "#c084fc"; }
+            else if (cardPatterns.discover.test(raw)) { type = "DISCOVER"; color = "#b77aff"; }
+            else if (cardPatterns.diners.test(raw)) { type = "DINERS"; color = "#a55aff"; }
+            else if (cardPatterns.visa.test(raw)) { type = "VISA"; color = "#d08aff"; }
 
             brandLabel.textContent = type;
             brandLabel.style.color = color;
